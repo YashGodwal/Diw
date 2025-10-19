@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali My Love ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .img {
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+
+        body {
+            /* font-family: 'Georgia', serif; */
+            font-family: "Dancing Script", cursive;
+            font-optical-sizing: auto;
+            font-weight:500;
+            /* font-style: normal;
+            overflow-x: hidden;
+            background: #000;
+            color: #fff; */
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Particle system */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ffd700;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particle-float 4s linear infinite;
+        }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-20px) translateX(var(--drift)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Diya Section */
+        #diya-section {
+            background: radial-gradient(ellipse at bottom, #1a0a2e 0%, #0a0515 100%);
+        }
+
+        .diya-row {
+            display: flex;
+            gap: 80px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .realistic-diya {
+            width: 120px;
+            height: 140px;
+            position: relative;
+            filter: drop-shadow(0 10px 30px rgba(255, 140, 0, 0.6));
+            animation: gentle-sway 4s ease-in-out infinite;
+        }
+
+        .realistic-diya:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .realistic-diya:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .realistic-diya:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+
+        .realistic-diya:nth-child(5) {
+            animation-delay: 2s;
+        }
+
+        @keyframes gentle-sway {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-8px) rotate(-2deg);
+            }
+
+            75% {
+                transform: translateY(-8px) rotate(2deg);
+            }
+        }
+
+        /* Realistic Diya Base */
+        .diya-bowl {
+            width: 100px;
+            height: 45px;
+            background: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #8b6914 100%);
+            border-radius: 50% 50% 60% 60% / 40% 40% 60% 60%;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            box-shadow:
+                inset 0 -3px 8px rgba(0, 0, 0, 0.4),
+                0 5px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        .diya-bowl::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 30%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+            border-radius: 50%;
+            top: 8px;
+            left: 10%;
+        }
+
+        .diya-rim {
+            width: 110px;
+            height: 20px;
+            background: linear-gradient(to bottom, #daa520, #b8860b);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 35px;
+            left: 5px;
+            box-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 1px 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .diya-wick {
+            width: 8px;
+            height: 20px;
+            background: linear-gradient(to top, #4a3728, #2c1810);
+            position: absolute;
+            bottom: 45px;
+            left: 56px;
+            border-radius: 2px;
+        }
+
+        /* Realistic Flame */
+        .realistic-flame {
+            position: absolute;
+            bottom: 65px;
+            left: 52px;
+            width: 16px;
+            height: 40px;
+        }
+
+        .flame-core {
+            width: 16px;
+            height: 40px;
+            background: linear-gradient(to top,
+                    #ff4500 0%,
+                    #ff6347 20%,
+                    #ffa500 40%,
+                    #ffd700 60%,
+                    #ffff99 80%,
+                    #ffffff 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flame-dance 0.3s ease-in-out infinite alternate;
+            box-shadow:
+                0 0 20px #ff6347,
+                0 0 40px #ff4500,
+                0 0 60px #ffa500;
+        }
+
+        @keyframes flame-dance {
+            0% {
+                transform: scaleY(1) scaleX(1) translateX(0);
+                border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            }
+
+            25% {
+                transform: scaleY(1.08) scaleX(0.95) translateX(-1px);
+                border-radius: 48% 52% 50% 50% / 58% 62% 40% 40%;
+            }
+
+            50% {
+                transform: scaleY(1.05) scaleX(1.02) translateX(1px);
+                border-radius: 52% 48% 50% 50% / 62% 58% 40% 40%;
+            }
+
+            75% {
+                transform: scaleY(1.1) scaleX(0.93) translateX(-0.5px);
+                border-radius: 49% 51% 50% 50% / 59% 61% 40% 40%;
+            }
+
+            100% {
+                transform: scaleY(1.03) scaleX(0.98) translateX(0.5px);
+                border-radius: 51% 49% 50% 50% / 61% 59% 40% 40%;
+            }
+        }
+
+        .flame-glow {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle,
+                    rgba(255, 140, 0, 0.6) 0%,
+                    rgba(255, 69, 0, 0.3) 30%,
+                    transparent 70%);
+            border-radius: 50%;
+            top: -20px;
+            left: -32px;
+            animation: glow-pulse 1.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes glow-pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.15);
+            }
+        }
+
+        /* Smoke effect */
+        .smoke {
+            position: absolute;
+            bottom: 100px;
+            left: 58px;
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(to top, rgba(200, 200, 200, 0.4), transparent);
+            border-radius: 50%;
+            animation: smoke-rise 3s ease-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes smoke-rise {
+            0% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-80px) translateX(10px) scale(2);
+                opacity: 0;
+            }
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 50px 0 20px;
+            text-align: center;
+            background: linear-gradient(45deg, #ffd700, #ff6347, #ffa500, #ffd700);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes gradient-shift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 1.5s forwards;
+            z-index: 10;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Rangoli Section */
+        #rangoli-section {
+            background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
+        }
+
+        .rangoli {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            animation: rotate-rangoli 20s linear infinite;
+        }
+
+        @keyframes rotate-rangoli {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rangoli-petal {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50% 0 50% 0;
+            transform-origin: 50% 50%;
+            animation: color-shift 4s ease-in-out infinite;
+        }
+
+        @keyframes color-shift {
+
+            0%,
+            100% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Letter Section */
+        #letter-section {
+            background: linear-gradient(to bottom, #2d1b4e 0%, #4a0e4e 50%, #2d1b4e 100%);
+        }
+
+        .letter-container {
+            perspective: 1000px;
+            margin: 40px 0;
+        }
+
+        .letter-frame {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 3px solid #ffd700;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow:
+                0 10px 40px rgba(255, 215, 0, 0.3),
+                inset 0 0 20px rgba(255, 215, 0, 0.1);
+            animation: float-letter 4s ease-in-out infinite;
+            max-width: 700px;
+            position: relative;
+        }
+
+        @keyframes float-letter {
+
+            0%,
+            100% {
+                transform: translateY(0) rotateX(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotateX(2deg);
+            }
+        }
+
+        .letter-frame::before,
+        .letter-frame::after {
+            content: '✨';
+            position: absolute;
+            font-size: 2em;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .letter-frame::before {
+            top: -20px;
+            left: -20px;
+        }
+
+        .letter-frame::after {
+            bottom: -20px;
+            right: -20px;
+            animation-delay: 1s;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0.4;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+        }
+
+        .letter-placeholder {
+            width: 100%;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 2px dashed rgba(255, 215, 0, 0.5);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffd700;
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter-placeholder:hover {
+            border-color: #ffd700;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.08));
+            transform: scale(1.02);
+        }
+
+        .letter-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .letter-placeholder.has-image img {
+            display: block;
+        }
+
+        .letter-placeholder.has-image .upload-text {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            animation: bounce-icon 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce-icon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Fireworks */
+        .firework-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+
+        .firework-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: explode-particle 1.2s ease-out forwards;
+        }
+
+        @keyframes explode-particle {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Sparkle trail */
+        .sparkle-trail {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: trail-fade 1s ease-out forwards;
+        }
+
+        @keyframes trail-fade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0) translateY(20px);
+            }
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            padding: 50px;
+            max-width: 700px;
+            margin: 30px;
+            box-shadow:
+                0 15px 50px rgba(255, 215, 0, 0.2),
+                inset 0 0 30px rgba(255, 215, 0, 0.05);
+            animation: slideUp 1.2s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                    transparent,
+                    rgba(255, 215, 0, 0.1),
+                    transparent);
+            animation: shimmer-bg 3s linear infinite;
+        }
+
+        @keyframes shimmer-bg {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(70px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .message-box h2 {
+            color: #ffd700;
+            font-size: 2.3em;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .message-box p {
+            font-size: 1.3em;
+            line-height: 1.9;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Final Section */
+        #final-section {
+            background: radial-gradient(circle at center, #ff6b35 0%, #2d1b4e 40%, #0a0515 100%);
+            position: relative;
+        }
+
+        .final-message {
+            font-size: 2.2em;
+            text-align: center;
+            max-width: 900px;
+            line-height: 1.8;
+            animation: pulse-final 3s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes pulse-final {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+
+            50% {
+                transform: scale(1.03);
+                opacity: 1;
+            }
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            font-size: 2.5em;
+            animation: float-heart 7s ease-in infinite;
+            opacity: 0;
+            z-index: 5;
+        }
+
+        @keyframes float-heart {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(var(--drift)) rotate(360deg) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            font-size: 1.1em;
+            color: #ffd700;
+            animation: bounce-hint 2s infinite;
+            z-index: 10;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        @keyframes bounce-hint {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <audio autoPlay loop>
+       <source src="./assets/Rangisari Jugjugg Jeeyo 320 Kbps.mp3"
+           type="audio/mp3" />
+       Your browser does not support the audio element.
+   </audio>
+    <!-- Diya Section -->
+    <section id="diya-section" class="section">
+        <div class="firework-container" id="fw1"></div>
+
+        <div class="diya-row">
+            <div class="realistic-diya">
+                <div class="flame-glow"></div>
+                <div class="realistic-flame">
+                    <div class="flame-core"></div>
+                </div>
+                <div class="smoke"></div>
+                <div class="diya-wick"></div>
+                <div class="diya-rim"></div>
+                <div class="diya-bowl"></div>
+            </div>
+            <div class="realistic-diya">
+                <div class="flame-glow"></div>
+                <div class="realistic-flame">
+                    <div class="flame-core"></div>
+                </div>
+                <div class="smoke"></div>
+                <div class="diya-wick"></div>
+                <div class="diya-rim"></div>
+                <div class="diya-bowl"></div>
+            </div>
+            <div class="realistic-diya">
+                <div class="flame-glow"></div>
+                <div class="realistic-flame">
+                    <div class="flame-core"></div>
+                </div>
+                <div class="smoke"></div>
+                <div class="diya-wick"></div>
+                <div class="diya-rim"></div>
+                <div class="diya-bowl"></div>
+            </div>
+        </div>
+
+        <h1>Happy Diwali Neetu 💛</h1>
+        <p class="subtitle">To the light of my life ✨</p>
+
+        <div class="diya-row">
+            <div class="realistic-diya">
+                <div class="flame-glow"></div>
+                <div class="realistic-flame">
+                    <div class="flame-core"></div>
+                </div>
+                <div class="smoke"></div>
+                <div class="diya-wick"></div>
+                <div class="diya-rim"></div>
+                <div class="diya-bowl"></div>
+            </div>
+            <div class="realistic-diya">
+                <div class="flame-glow"></div>
+                <div class="realistic-flame">
+                    <div class="flame-core"></div>
+                </div>
+                <div class="smoke"></div>
+                <div class="diya-wick"></div>
+                <div class="diya-rim"></div>
+                <div class="diya-bowl"></div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">↓ Scroll down for something special ↓</div>
+    </section>
+
+    <!-- Rangoli Section -->
+    <section id="rangoli-section" class="section">
+        <div class="firework-container" id="fw2"></div>
+
+        <div class="rangoli" id="rangoli"></div>
+
+        <div class="message-box">
+            <h2>You Light Up My World 🪔</h2>
+            <p style="color: #ff6b35; font-size: 2rem;">Just like these diyas brighten the darkness, you bring light and joy into my life every single day. Even
+                though we're miles apart this Diwali, you're always in my heart. This festival of lights reminds me of
+                how you illuminate my world with your smile, your laughter, and your love.</p>
+        </div>
+    </section>
+
+    <!-- Letter Section -->
+    <section id="letter-section" class="section">
+        <div class="firework-container" id="fw3"></div>
+
+        <div class="message-box">
+            <h2>A Special Message For You 💌</h2>
+            <!-- <p>I wrote something from my heart. Click below to add the photo of my handwritten letter...</p> -->
+        </div>
+
+        <div class="letter-container">
+            <div class="letter-frame">
+
+                <!-- <label for="letterUpload" class="letter-placeholder" id="letterPlaceholder"> -->
+                <div class="upload-text">
+                    <div class="upload-icon">
+                    </div>
+
+
+                </div>
+                <!-- <img id="letterImage" alt="Handwritten Letter"> -->
+                </label>
+                <img class="letter-placeholder" src="./images/1000124658.jpg" alt="imge">
+
+            </div>
+            <input type="file" id="letterUpload" accept="image/*" disabled>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section id="final-section" class="section">
+        <div class="firework-container" id="fw4"></div>
+        <div id="hearts-container"></div>
+
+        <p class="final-message" style="color:#daa520;">
+            May this Diwali bring you endless happiness, success, and all the love you deserve. Can't wait to celebrate
+            many more Diwalis together. Until then, know that you're thought of, cherished, and loved more than words
+            can express.
+            <br><br>
+            Happy Diwali, my love- Neetu! 💖✨🪔
+        </p>
+    </section>
+
+    <script>
+        // Particles
+        function createParticles() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.setProperty('--drift', (Math.random() - 0.5) * 200 + 'px');
+                    particle.style.animationDelay = Math.random() * 4 + 's';
+                    particle.style.animationDuration = (3 + Math.random() * 2) + 's';
+                    section.appendChild(particle);
+                }
+            });
+        }
+
+        // Rangoli pattern
+        function createRangoli() {
+            const rangoli = document.getElementById('rangoli');
+            const colors = ['#ff6b35', '#ffd700', '#ff1744', '#00e5ff', '#76ff03', '#9c27b0'];
+            const petals = 12;
+
+            for (let i = 0; i < petals; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'rangoli-petal';
+                petal.style.background = colors[i % colors.length];
+                petal.style.transform = `rotate(${i * (360 / petals)}deg) translateY(-100px)`;
+                petal.style.animationDelay = (i * 0.1) + 's';
+                rangoli.appendChild(petal);
+            }
+        }
+
+        // Fireworks
+        function createFirework(container, x, y) {
+            const colors = ['#ff6b35', '#ffd700', '#ff1744', '#00e5ff', '#76ff03', '#ff69b4'];
+            const particles = 40;
+
+            for (let i = 0; i < particles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'firework-particle';
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+                const angle = (Math.PI * 2 * i) / particles;
+                const velocity = 80 + Math.random() * 120;
+                particle.style.setProperty('--tx', Math.cos(angle) * velocity + 'px');
+                particle.style.setProperty('--ty', Math.sin(angle) * velocity + 'px');
+
+                container.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 1200);
+            }
+        }
+
+        // Auto fireworks
+        function autoFireworks() {
+            const containers = ['fw1', 'fw2', 'fw3', 'fw4'];
+            const containerId = containers[Math.floor(Math.random() * containers.length)];
+            const container = document.getElementById(containerId);
+            const rect = container.getBoundingClientRect();
+            const x = Math.random() * rect.width;
+            const y = Math.random() * rect.height;
+            createFirework(container, x, y);
+        }
+
+        // Hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            const hearts = ['❤️', '💖', '💝', '💕', '💗'];
+            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.setProperty('--drift', (Math.random() - 0.5) * 300 + 'px');
+            heart.style.animationDuration = (5 + Math.random() * 3) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('hearts-container').appendChild(heart);
+
+            setTimeout(() => heart.remove(), 10000);
+        }
+
+        // Sparkle trail on mouse move
+        let lastSparkle = 0;
+        document.addEventListener('mousemove', (e) => {
+            const now = Date.now();
+            if (now - lastSparkle > 50) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle-trail';
+                sparkle.style.left = e.pageX + 'px';
+                sparkle.style.top = e.pageY + 'px';
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+                lastSparkle = now;
+            }
+        });
+
+        // Letter upload
+        document.getElementById('letterUpload').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const img = document.getElementById('letterImage');
+                    img.src = event.target.result;
+                    document.getElementById('letterPlaceholder').classList.add('has-image');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Initialize
+        createParticles();
+        createRangoli();
+        setInterval(autoFireworks, 2000);
+        setInterval(createHeart, 600);
+
+        // Click for fireworks
+        document.querySelectorAll('.section').forEach(section => {
+            section.addEventListener('click', (e) => {
+                const container = section.querySelector('.firework-container');
+                if (container && e.target.tagName !== 'LABEL' && e.target.tagName !== 'INPUT') {
+                    const rect = section.getBoundingClientRect();
+                    createFirework(container, e.clientX - rect.left, e.clientY - rect.top);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
